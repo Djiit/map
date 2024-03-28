@@ -11,7 +11,7 @@ export default async function Home() {
   return (
     <main>
       <LazyMap
-        spots={data.elements.map((e) => ({
+        spots={data.elements.map((e: any) => ({
           position: [e.lat, e.lon],
           content: e.tags.name,
         }))}
