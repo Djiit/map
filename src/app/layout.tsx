@@ -8,6 +8,7 @@ const APP_TITLE_TEMPLATE = "%s - Map";
 const APP_DESCRIPTION = "Best Map in the world!";
 
 export const metadata: Metadata = {
+  manifest: "/manifest.json",
   applicationName: APP_NAME,
   title: {
     default: APP_DEFAULT_TITLE,
