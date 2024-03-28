@@ -1,6 +1,6 @@
-import { cache } from "react";
 // @ts-expect-error
 import { DefaultOverpassApi } from "overpass-ql-ts";
+import { cache } from "react";
 
 const api = DefaultOverpassApi();
 

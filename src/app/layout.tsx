@@ -1,6 +1,7 @@
+import "./globals.css";
+
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 
 const APP_NAME = "Map";
 const APP_DEFAULT_TITLE = "My Awesome Map";

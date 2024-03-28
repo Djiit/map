@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+
 import { getData } from "./services/overpass";
 
 const LazyMap = dynamic(() => import("@/components/Map"), {
@@ -9,7 +10,7 @@ const LazyMap = dynamic(() => import("@/components/Map"), {
 export default async function Home() {
   const data = await getData({ amenity: "restaurant", changing_table: "yes" });
   return (
-    <main>
+    <main className="h-full">
       <LazyMap
         spots={data.elements.map((e: any) => ({
           position: [e.lat, e.lon],
