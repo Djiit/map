@@ -15,7 +15,7 @@ export default function Map({ spots }: { spots: any[] }) {
   return (
     <MapContainer
       preferCanvas={true}
-      center={[51.505, -0.09]}
+      center={[47.2144851, -1.5291969]}
       zoom={11}
       scrollWheelZoom={true}
       style={{ height: "400px", width: "600px" }}

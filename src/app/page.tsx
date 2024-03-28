@@ -1,27 +1,21 @@
-"use client";
-
 import dynamic from "next/dynamic";
+import { getData } from "./services/overpass";
 
 const LazyMap = dynamic(() => import("@/components/Map"), {
   ssr: false,
   loading: () => <p>Loading...</p>,
 });
 
-const spots = [
-  {
-    position: [51.505, -0.09],
-    content: "London",
-  },
-  {
-    position: [48.8566, 2.3522],
-    content: "Paris",
-  },
-];
-
-export default function Home() {
+export default async function Home() {
+  const data = await getData({ amenity: "restaurant", changing_table: "yes" });
   return (
     <main>
-      <LazyMap spots={spots} />
+      <LazyMap
+        spots={data.elements.map((e) => ({
+          position: [e.lat, e.lon],
+          content: e.tags.name,
+        }))}
+      />
     </main>
   );
 }
