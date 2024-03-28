@@ -14,6 +14,9 @@ dependencies:
   next:
     specifier: 14.1.4
     version: 14.1.4(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0)
+  overpass-ql-ts:
+    specifier: ^1.5.0
+    version: 1.5.0
   react:
     specifier: ^18
     version: 18.2.0
@@ -3444,6 +3447,10 @@ packages:
       prelude-ls: 1.2.1
       type-check: 0.4.0
     dev: true
+
+  /overpass-ql-ts@1.5.0:
+    resolution: {integrity: sha512-0HbuWC9HSzml+f02BcWXaEzeaKF7Q+apiUMqUg3U8v2vVdhXJ/IuepxXBW897unrp2PI28Dx7P1d9FPXu8dW5Q==}
+    dev: false
 
   /p-limit@3.1.0:
     resolution: {integrity: sha512-TYOanM3wGwNGsZN2cVTYPArw454xnXj5qmWF1bEoAc4+cU/ol7GVh7odevjp1FNHduHc3KZMcFduxU5Xc6uJRQ==}
