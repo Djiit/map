@@ -4,5 +4,5 @@ import { DefaultOverpassApi } from "overpass-ql-ts";
 const api = DefaultOverpassApi();
 
 export const getData = cache(async (query: any) =>
-  api.execJson((s) => [s.node.query(query)])
+  api.execJson((s) => [s.node.query(query)]),
 );
