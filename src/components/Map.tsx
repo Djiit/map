@@ -8,14 +8,7 @@ import { ViewfinderCircleIcon } from "@heroicons/react/24/solid";
 import { useEffect } from "react";
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 
-import Spot from "./Spot";
-
-const POSITION_CLASSES = {
-  bottomleft: "leaflet-bottom leaflet-left",
-  bottomright: "leaflet-bottom leaflet-right",
-  topleft: "leaflet-top leaflet-left",
-  topright: "leaflet-top leaflet-right",
-};
+import Spot from "@/components/Spot";
 
 const LocationControl = ({ position }: { position: string }) => {
   const map = useMap();
@@ -27,10 +20,8 @@ const LocationControl = ({ position }: { position: string }) => {
 
   useEffect(locate, [map]);
 
-  const positionClass =
-    (position && POSITION_CLASSES[position]) || POSITION_CLASSES.topright;
   return (
-    <div className={positionClass}>
+    <div className="leaflet-top leaflet-right">
       <button onClick={locate} className="leaflet-control leaflet-bar btn">
         <ViewfinderCircleIcon className="h-6 w-6 text-black" />
       </button>
