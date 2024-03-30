@@ -1,5 +1,6 @@
 import "@/app/globals.css";
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { NextIntlClientProvider, useMessages } from "next-intl";
@@ -73,6 +74,7 @@ export default function RootLayout({
             <div className="h-full">{children}</div>
             <Footer />
           </div>
+          <SpeedInsights />
         </body>
       </html>
     </NextIntlClientProvider>
