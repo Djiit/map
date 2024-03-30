@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 
-import { getData } from "./services/overpass";
+import { getData } from "@/services/overpass";
 
 const LazyMap = dynamic(() => import("@/components/Map"), {
   ssr: false,

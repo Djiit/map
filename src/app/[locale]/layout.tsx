@@ -1,7 +1,10 @@
-import "./globals.css";
+import "@/app/globals.css";
 
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { NextIntlClientProvider, useMessages } from "next-intl";
+
+import Footer from "@/components/Footer";
 
 const APP_NAME = "Map";
 const APP_DEFAULT_TITLE = "My Awesome Map";
@@ -53,12 +56,25 @@ export const revalidate = 3600;
 
 export default function RootLayout({
   children,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
+  const messages = useMessages();
   return (
-    <html lang="en" dir="ltr">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <NextIntlClientProvider messages={messages} locale={locale}>
+      <html lang={locale} dir="ltr">
+        <body className={inter.className}>
+          <div className="h-full flex flex-col">
+            <div className="navbar bg-base-100">
+              <a className="btn btn-ghost text-xl">{APP_NAME}</a>
+            </div>
+            <div className="h-full">{children}</div>
+            <Footer />
+          </div>
+        </body>
+      </html>
+    </NextIntlClientProvider>
   );
 }
