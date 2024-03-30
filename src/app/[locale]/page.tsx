@@ -8,7 +8,7 @@ const LazyMap = dynamic(() => import("@/components/Map"), {
 });
 
 const QUERY = {
-  amenity: /(bar|restaurant|pub|cafe)/,
+  amenity: /(bar|restaurant)/,
   changing_table: "yes",
 };
 
