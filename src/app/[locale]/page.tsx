@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { type OverpassQueryFilter } from "overpass-ql-ts";
 
 import { getData } from "@/services/overpass";
 
@@ -7,14 +8,19 @@ const LazyMap = dynamic(() => import("@/components/Map"), {
   loading: () => <p>Loading...</p>,
 });
 
+const QUERY: OverpassQueryFilter = {
+  amenity: /(bar|restaurant|pub|cafe)/,
+  changing_table: "yes",
+};
+
 export default async function Home() {
-  const data = await getData({ amenity: "restaurant", changing_table: "yes" });
+  const data = await getData(QUERY);
   return (
     <main className="h-full">
       <LazyMap
-        spots={data.elements.map((e: any) => ({
+        spots={data.map((e: any) => ({
           position: [e.lat, e.lon],
-          content: e.tags.name,
+          content: e.tags?.name,
         }))}
       />
     </main>
