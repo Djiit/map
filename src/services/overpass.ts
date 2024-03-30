@@ -1,10 +1,10 @@
 // @ts-expect-error
-import { DefaultOverpassApi, type OverpassQueryFilter } from "overpass-ql-ts";
+import { DefaultOverpassApi } from "overpass-ql-ts";
 import { cache } from "react";
 
 const api = DefaultOverpassApi();
 
-export const getData = cache(async (query: OverpassQueryFilter) => {
+export const getData = cache(async (query: any) => {
   const results = await api.execJson((s) => {
     return [s.node.query(query)];
   });

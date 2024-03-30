@@ -1,5 +1,4 @@
 import dynamic from "next/dynamic";
-import { type OverpassQueryFilter } from "overpass-ql-ts";
 
 import { getData } from "@/services/overpass";
 
@@ -8,7 +7,7 @@ const LazyMap = dynamic(() => import("@/components/Map"), {
   loading: () => <p>Loading...</p>,
 });
 
-const QUERY: OverpassQueryFilter = {
+const QUERY = {
   amenity: /(bar|restaurant|pub|cafe)/,
   changing_table: "yes",
 };
