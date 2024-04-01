@@ -7,13 +7,8 @@ const LazyMap = dynamic(() => import("@/components/Map"), {
   loading: () => <p>Loading...</p>,
 });
 
-const QUERY = {
-  amenity: /(bar|restaurant)/,
-  changing_table: "yes",
-};
-
 export default async function Home() {
-  const data = await getData(QUERY);
+  const data = await getData();
   return (
     <main className="h-full">
       <LazyMap

@@ -1,13 +1,39 @@
 // @ts-expect-error
-import { DefaultOverpassApi } from "overpass-ql-ts";
-import { cache } from "react";
+import {
+  AnyOverpassElement,
+  DefaultOverpassApi,
+  OverpassOutputGeoInfo,
+} from "overpass-ql-ts";
+
+const AMENITIES = ["bar", "restaurant", "pub", "cafe", "food_court"];
 
 const api = DefaultOverpassApi();
 
-export const getData = cache(async (query: any) => {
-  const results = await api.execJson((s: any) => {
-    return [s.node.query(query)];
-  });
-  console.debug(`Found ${results.elements.length} elements.`);
-  return results.elements;
-});
+export const getData = async () => {
+  console.debug(`Querying for ${AMENITIES.join(", ")} with changing table.`);
+  const results = await Promise.all(
+    AMENITIES.map(async (amenity) => {
+      const result = await api.execJson((s: any) => {
+        return [
+          s.node.query(
+            {
+              amenity,
+              changing_table: "yes",
+            },
+            { geoInfo: OverpassOutputGeoInfo.Geometry },
+            { timeout: 10 }, // Same as Vercel function timeout
+          ),
+        ];
+      });
+      console.debug(`Found ${result.elements.length} ${amenity} elements.`);
+      return result;
+    }),
+  );
+
+  const totalResults = results.reduce(
+    (acc, r: any) => acc.concat(r.elements),
+    [],
+  );
+  console.debug(`Total results: ${totalResults.length}.`);
+  return totalResults;
+};
