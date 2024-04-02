@@ -36,8 +36,8 @@ dependencies:
     specifier: ^3.10.0
     version: 3.10.0(next@14.1.4)(react@18.2.0)
   overpass-ql-ts:
-    specifier: ^1.5.0
-    version: 1.5.0
+    specifier: ^1.6.0
+    version: 1.6.0
   react:
     specifier: ^18
     version: 18.2.0
@@ -4195,8 +4195,8 @@ packages:
       type-check: 0.4.0
     dev: true
 
-  /overpass-ql-ts@1.5.0:
-    resolution: {integrity: sha512-0HbuWC9HSzml+f02BcWXaEzeaKF7Q+apiUMqUg3U8v2vVdhXJ/IuepxXBW897unrp2PI28Dx7P1d9FPXu8dW5Q==}
+  /overpass-ql-ts@1.6.0:
+    resolution: {integrity: sha512-Tur/RH89g2uVnbRpfZNXGqJdt0LzWBXFSPX2U41NIQmkpTgQ9vybRTiG7uO1tDmNq5m6HB3NLLq47/G0c5aCqw==}
     dev: false
 
   /p-limit@3.1.0:
