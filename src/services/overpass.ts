@@ -3,30 +3,44 @@ import {
   DefaultOverpassApi,
   OverpassOutputGeoInfo,
 } from "overpass-ql-ts";
+import { cache } from "react";
 
-const AMENITIES = ["bar", "restaurant", "pub", "cafe", "food_court"];
+const QUERIES: { amenity?: string; tourism?: string }[] = [
+  { amenity: "bar" },
+  { amenity: "restaurant" },
+  { amenity: "pub" },
+  { amenity: "cafe" },
+  { amenity: "food_court" },
+  { amenity: "public building" },
+  { amenity: "fast_food" },
+  { tourism: "hotel" },
+];
 
 const api = DefaultOverpassApi();
 
 export const getData = async () => {
-  console.debug(`Querying for ${AMENITIES.join(", ")} with changing table.`);
+  console.debug(`Querying OverPass API...`);
   const results = await Promise.all(
-    AMENITIES.map(async (amenity) => {
-      const result = await api.execJson(
-        (s) => {
-          return [
-            s.node.query({
-              amenity,
-              changing_table: "yes",
-            }),
-          ];
-        },
-        { geoInfo: OverpassOutputGeoInfo.Geometry },
-        { timeout: 10 }, // Same as Vercel function timeout
-      );
-      console.debug(`Found ${result.elements.length} ${amenity} elements.`);
-      return result;
-    }),
+    QUERIES.map(
+      cache(async (query) => {
+        const result = await api.execJson(
+          (s) => {
+            return [
+              s.node.query({
+                ...query,
+                changing_table: "yes",
+              }),
+            ];
+          },
+          { geoInfo: OverpassOutputGeoInfo.Geometry },
+          { timeout: 10 }, // Same as Vercel function timeout
+        );
+        console.debug(
+          `Found ${result.elements.length} ${JSON.stringify(query)} elements.`,
+        );
+        return result;
+      }),
+    ),
   );
 
   const totalResults = results.reduce(

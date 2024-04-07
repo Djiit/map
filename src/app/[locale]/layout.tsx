@@ -70,7 +70,12 @@ export default function RootLayout({
         <body className={inter.className}>
           <div className="h-full flex flex-col">
             <div className="navbar bg-base-100">
-              <a className="btn btn-ghost text-xl">{APP_NAME}</a>
+              <div className="flex-1">
+                <a className="btn btn-ghost text-xl">{APP_NAME}</a>
+              </div>
+              <div className="flex-none">
+                <div className="badge badge-warning gap-2">BETA</div>
+              </div>
             </div>
             <div className="h-full">{children}</div>
             <Footer />

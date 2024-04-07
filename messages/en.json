@@ -1,3 +1,20 @@
 {
-  "Footer": { "about": "About", "contribute": "Contribute" }
+  "common": {
+    "close": "Close"
+  },
+  "footer": {
+    "about": "About",
+    "contribute": "Contribute",
+    "settings": "Settings",
+    "language": "Language",
+    "info": "Informations",
+    "whois": "Who we are",
+    "sources": "Sources"
+  },
+  "spot": {
+    "directions": "Get Directions"
+  },
+  "location": {
+    "here": "You are here"
+  }
 }
