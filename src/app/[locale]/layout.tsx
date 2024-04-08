@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
 const APP_NAME = "Map";
-const APP_DEFAULT_TITLE = "My Awesome Map";
+const APP_DEFAULT_TITLE = "Map";
 const APP_TITLE_TEMPLATE = "%s - Map";
 const APP_DESCRIPTION = "Best Map in the world!";
 
