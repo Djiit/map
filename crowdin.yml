@@ -1,3 +1,5 @@
+pull_request_title: "chore(l10n): update translations"
+commit_message: "chore(l10n): update translations"
 files:
   - source: /messages/en.json
     translation: /messages/%two_letters_code%.json
