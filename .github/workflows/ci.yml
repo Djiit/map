@@ -51,7 +51,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Install Playwright Browsers
-        if: !steps.playwright-cache.outputs.cache-hit
+        if: ${{ !steps.playwright-cache.outputs.cache-hit }}
         run: pnpm exec playwright install --with-deps
       - name: Build app
         run: pnpm run build
