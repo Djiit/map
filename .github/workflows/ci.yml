@@ -40,7 +40,7 @@ jobs:
       - id: cache
         run: |
           CACHE_KEYS=$(cat package.json | jq -r '.devDependencies."@playwright/test" | sub("\\^(?<x>[0-9].[0-9]*.[0-9]+)"; "\(.x)")')
-          echo "cache-key=$CACHE_KEYS" >> $GITHUB_OUTPUT'
+          echo "cache-key=$CACHE_KEYS" >> $GITHUB_OUTPUT
       - uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
