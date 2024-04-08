@@ -5,6 +5,7 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 
 import { type LatLngExpression } from "leaflet";
+import { useTranslations } from "next-intl";
 import { MapContainer, TileLayer } from "react-leaflet";
 
 import LocationControl from "@/components/LocationControl";
@@ -14,6 +15,7 @@ const DEFAULT_ZOOM = "11";
 const DEFAULT_CENTER: LatLngExpression = [47.2144851, -1.5291969]; // Nantes, France
 
 export default function Map({ spots }: { spots: any[] }) {
+  const t = useTranslations();
   const zoom = Number.parseInt(localStorage.getItem("zoom") || DEFAULT_ZOOM);
   const location =
     (localStorage
@@ -29,7 +31,7 @@ export default function Map({ spots }: { spots: any[] }) {
       scrollWheelZoom={true}
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution={t.raw("map.attribution")}
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {spots.map((spot) => (

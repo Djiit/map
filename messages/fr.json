@@ -16,5 +16,8 @@
   },
   "location": {
     "here": "Vous êtes ici"
+  },
+  "map": {
+    "attribution": "&copy; Contributeurs·rices <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a>"
   }
 }
