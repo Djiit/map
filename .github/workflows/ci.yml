@@ -37,19 +37,21 @@ jobs:
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-      - id: cache
+      - id: playwright-cache-key
         run: |
           CACHE_KEYS=$(cat package.json | jq -r '.devDependencies."@playwright/test" | sub("\\^(?<x>[0-9].[0-9]*.[0-9]+)"; "\(.x)")')
           echo "cache-key=$CACHE_KEYS" >> $GITHUB_OUTPUT
       - uses: actions/cache@v4
+        id: playwright-cache
         with:
           path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-${{ steps.cache.outputs.cache-key }}
+          key: ${{ runner.os }}-playwright-${{ steps.playwright-cache-key.outputs.cache-key }}
           restore-keys: |
             ${{ runner.os }}-playwright-
       - name: Install dependencies
         run: pnpm install
       - name: Install Playwright Browsers
+        if: !steps.playwright-cache.outputs.cache-hit
         run: pnpm exec playwright install --with-deps
       - name: Build app
         run: pnpm run build
