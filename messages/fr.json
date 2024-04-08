@@ -2,15 +2,6 @@
   "common": {
     "close": "Close"
   },
-  "footer": {
-    "about": "A propos",
-    "contribute": "Contribuer",
-    "settings": "Réglages",
-    "language": "Langue",
-    "info": "Informations",
-    "whois": "Qui sommes nous",
-    "sources": "Sources"
-  },
   "spot": {
     "directions": "Y aller"
   },
@@ -19,5 +10,15 @@
   },
   "map": {
     "attribution": "&copy; Contributeurs·rices <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a>"
+  },
+  "about": {
+    "content": "🗺️ This is a map of nearby changing tables. <br /> <br /> 🧑‍🧑‍🧒 As parents ourselves, we know how important it is to have access to a clean and safe place to change your baby. We hope this map will help you find the nearest changing table when you need it. <br /> <br /> 🌍 All the data it contains comes from the community. You can help us by adding new changing tables or by updating the information of existing ones on OpenStreetMap.",
+    "title": "A Propos"
+  },
+  "settings": {
+    "title": "Réglages",
+    "language": {
+      "title": "Langue"
+    }
   }
 }

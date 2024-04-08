@@ -7,6 +7,7 @@ import { Tilt_Warp } from "next/font/google";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 const APP_NAME = "Map";
 const APP_DEFAULT_TITLE = "My Awesome Map";
@@ -73,14 +74,7 @@ export default function RootLayout({
       <html lang={locale} dir="ltr" className={tiltWarp.className}>
         <body className="font-tilt-warp">
           <div className="h-full flex flex-col">
-            <div className="navbar bg-base-100">
-              <div className="flex-1">
-                <a className="btn btn-ghost text-xl">{APP_NAME}</a>
-              </div>
-              <div className="flex-none">
-                <div className="badge badge-warning gap-2">BETA</div>
-              </div>
-            </div>
+            <Header />
             <div className="h-full">{children}</div>
             <Footer />
           </div>

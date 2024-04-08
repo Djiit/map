@@ -1,118 +1,29 @@
 "use client";
 
-import Link from "next/link";
-import { useTranslations } from "next-intl";
-
 import { version } from "../../package.json";
 
 export default function Footer() {
-  const t = useTranslations();
   return (
     <footer className="footer p-10 bg-neutral text-neutral-content">
-      {/* <nav>
+      <nav>
         <h6 className="footer-title">Map v{version}</h6>
-        <a className="link link-hover" href="https://github.com/Djiit/map">{t("footer.sources")}</a> 
-      </nav>
-      <nav>
-        <h6 className="footer-title">{t("footer.about")}</h6>
-        <a
-          className="link link-hover"
-          onClick={() =>
-            (document.getElementById("modal_info") as any)?.showModal()
-          }
-        >
-          {t("footer.info")}
-        </a>
-        <dialog id="modal_info" className="modal modal-bottom sm:modal-middle">
-          <div className="modal-box">
-            <h3 className="font-bold text-lg">{t("footer.info")}</h3>
-            <p className="py-4">
-              Press ESC key or click the button below to close
-            </p>
-            <div className="modal-action">
-              <form method="dialog">
-                <button className="btn">{t("common.close")}</button>
-              </form>
-            </div>
-          </div>
-        </dialog>
-        <a
-          className="link link-hover"
-          onClick={() =>
-            (document.getElementById("modal_contribute") as any)?.showModal()
-          }
-        >
-          {t("footer.contribute")}
-        </a>
-        <dialog
-          id="modal_contribute"
-          className="modal modal-bottom sm:modal-middle"
-        >
-          <div className="modal-box">
-            <h3 className="font-bold text-lg">{t("footer.contribute")}</h3>
-            <p className="py-4">
-              Press ESC key or click the button below to close
-            </p>
-            <div className="modal-action">
-              <form method="dialog">
-                <button className="btn">{t("common.close")}</button>
-              </form>
-            </div>
-          </div>
-        </dialog>
-        <a
-          className="link link-hover"
-          onClick={() =>
-            (document.getElementById("modal_whois") as any)?.showModal()
-          }
-        >
-          {t("footer.whois")}
-        </a>
-        <dialog id="modal_whois" className="modal modal-bottom sm:modal-middle">
-          <div className="modal-box">
-            <h3 className="font-bold text-lg">Hello!</h3>
-            <p className="py-4">
-              Press ESC key or click the button below to close
-            </p>
-            <div className="modal-action">
-              <form method="dialog">
-                <button className="btn">{t("common.close")}</button>
-              </form>
-            </div>
-          </div>
-        </dialog>
-      </nav> */}
-      <nav>
-        <h6 className="footer-title">{t("footer.settings")}</h6>
-        <a
-          className="link link-hover"
-          onClick={() =>
-            (document.getElementById("modal_settings") as any)?.showModal()
-          }
-        >
-          {t("footer.language")}
-        </a>
-        <dialog
-          id="modal_settings"
-          className="modal modal-bottom sm:modal-middle"
-        >
-          <div className="modal-box">
-            <h3 className="font-bold text-lg">{t("footer.language")}</h3>
-            <div className="py-4 flex flex-row gap-3">
-              <Link locale="en" href="/en" className="text-3xl">
-                🇬🇧
-              </Link>
-              <Link locale="fr" href="/fr" className="text-3xl">
-                🇫🇷
-              </Link>
-            </div>
-            <div className="modal-action">
-              <form method="dialog">
-                <button className="btn">{t("common.close")}</button>
-              </form>
-            </div>
-          </div>
-        </dialog>
+        <div className="grid grid-flow-col gap-4">
+          <a className="link link-hover" href="https://github.com/Djiit/map">
+            <span>
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                className="h-6 w-6 fill-slate-900"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M12 2C6.477 2 2 6.463 2 11.97c0 4.404 2.865 8.14 6.839 9.458.5.092.682-.216.682-.48 0-.236-.008-.864-.013-1.695-2.782.602-3.369-1.337-3.369-1.337-.454-1.151-1.11-1.458-1.11-1.458-.908-.618.069-.606.069-.606 1.003.07 1.531 1.027 1.531 1.027.892 1.524 2.341 1.084 2.91.828.092-.643.35-1.083.636-1.332-2.22-.251-4.555-1.107-4.555-4.927 0-1.088.39-1.979 1.029-2.675-.103-.252-.446-1.266.098-2.638 0 0 .84-.268 2.75 1.022A9.607 9.607 0 0 1 12 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.372.202 2.386.1 2.638.64.696 1.028 1.587 1.028 2.675 0 3.83-2.339 4.673-4.566 4.92.359.307.678.915.678 1.846 0 1.332-.012 2.407-.012 2.734 0 .267.18.577.688.48 3.97-1.32 6.833-5.054 6.833-9.458C22 6.463 17.522 2 12 2Z"
+                ></path>
+              </svg>
+            </span>
+          </a>
+        </div>
       </nav>
     </footer>
   );
