@@ -13,3 +13,7 @@ pnpm dev
 # Credits
 
 - @Djiit
+
+# License
+
+See [LICENSE.md](LICENSE.md)
