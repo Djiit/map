@@ -3,7 +3,7 @@ import "@/app/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Tilt_Warp } from "next/font/google";
 import { NextIntlClientProvider, useMessages } from "next-intl";
 
 import Footer from "@/components/Footer";
@@ -12,6 +12,11 @@ const APP_NAME = "Map";
 const APP_DEFAULT_TITLE = "My Awesome Map";
 const APP_TITLE_TEMPLATE = "%s - Map";
 const APP_DESCRIPTION = "Best Map in the world!";
+
+const tiltWarp = Tilt_Warp({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   manifest: "/manifest.json",
@@ -52,7 +57,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: "#FFFFFF",
 };
-const inter = Inter({ subsets: ["latin"] });
 
 export const revalidate = 3600;
 
@@ -66,8 +70,8 @@ export default function RootLayout({
   const messages = useMessages();
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
-      <html lang={locale} dir="ltr">
-        <body className={inter.className}>
+      <html lang={locale} dir="ltr" className={tiltWarp.className}>
+        <body className="font-tilt-warp">
           <div className="h-full flex flex-col">
             <div className="navbar bg-base-100">
               <div className="flex-1">
