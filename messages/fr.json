@@ -1,6 +1,6 @@
 {
   "common": {
-    "close": "Close"
+    "close": "Fermer"
   },
   "spot": {
     "directions": "Y aller"
@@ -12,7 +12,7 @@
     "attribution": "&copy; Contributeurs·rices <a href=\"https://www.openstreetmap.org/copyright\">OpenStreetMap</a>"
   },
   "about": {
-    "content": "🗺️ This is a map of nearby changing tables. <br /> <br /> 🧑‍🧑‍🧒 As parents ourselves, we know how important it is to have access to a clean and safe place to change your baby. We hope this map will help you find the nearest changing table when you need it. <br /> <br /> 🌍 All the data it contains comes from the community. You can help us by adding new changing tables or by updating the information of existing ones on OpenStreetMap.",
+    "content": "🗺️ Ceci est une carte des tables à langer à proximité. <br /> <br /> 🧑‍🧑‍🧒 En tant que parents, nous savons à quel point il est important d'avoir accès à un endroit propre et sûr pour changer votre bébé. Nous espérons que cette carte vous aidera à trouver l'endroit le plus proche quand vous en aurez besoin. <br /> <br /> 🌍 Toutes les données qu'elle contient proviennent de la communauté. Vous pouvez nous aider en ajoutant de nouvelles informations ou en mettant à jour les informations existantes sur OpenStreetMap.",
     "title": "A Propos"
   },
   "settings": {
