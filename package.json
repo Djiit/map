@@ -19,6 +19,7 @@
     "prepare": "husky",
     "start": "next start",
     "test": "vitest --dir src --passWithNoTests",
+    "test:e2e": "playwright test",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
