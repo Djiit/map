@@ -1,12 +1,12 @@
 "use client";
 
-import { version } from "../../package.json";
+import packageInformations from "../../package.json";
 
 export default function Footer() {
   return (
     <footer className="footer p-10 bg-neutral text-neutral-content">
       <nav>
-        <h6 className="footer-title">Map v{version}</h6>
+        <h6 className="footer-title">Map v{packageInformations.version}</h6>
         <div className="grid grid-flow-col gap-4">
           <a className="link link-hover" href="https://github.com/Djiit/map">
             <span>
