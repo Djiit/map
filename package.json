@@ -7,11 +7,19 @@
     "email": "julien.tanay@gmail.com",
     "url": "https://github.com/Djiit"
   },
+  "homepage": "https://map.djiit.dev",
   "repository": {
     "type": "git",
     "url": "https://github.com/Djiit/map"
   },
   "license": "GNU GPLv3",
+  "keywords": [
+    "app",
+    "nextjs",
+    "react",
+    "leaflet",
+    "openstreetmap"
+  ],
   "scripts": {
     "build": "next build",
     "dev": "next dev",
