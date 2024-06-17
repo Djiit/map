@@ -40,7 +40,7 @@
     "leaflet": "^1.9.4",
     "leaflet-defaulticon-compatibility": "^0.1.2",
     "next": "14.1.4",
-    "next-intl": "^3.10.0",
+    "next-intl": "^3.15.0",
     "overpass-ql-ts": "^1.8.0",
     "react": "^18",
     "react-dom": "^18",
