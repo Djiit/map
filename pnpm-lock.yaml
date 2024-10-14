@@ -31,7 +31,7 @@ dependencies:
     version: 0.1.2
   next:
     specifier: 14.2.4
-    version: 14.2.4(@babel/core@7.24.3)(@playwright/test@1.43.0)(react-dom@18.2.0)(react@18.2.0)
+    version: 14.2.4(@babel/core@7.24.3)(@playwright/test@1.48.0)(react-dom@18.2.0)(react@18.2.0)
   next-intl:
     specifier: ^3.15.0
     version: 3.15.0(next@14.2.4)(react@18.2.0)
@@ -59,8 +59,8 @@ devDependencies:
     specifier: ^19.0.3
     version: 19.0.3
   '@playwright/test':
-    specifier: ^1.43.0
-    version: 1.43.0
+    specifier: ^1.48.0
+    version: 1.48.0
   '@tanstack/eslint-plugin-query':
     specifier: ^5.28.6
     version: 5.28.6(eslint@8.57.0)(typescript@5.4.5)
@@ -1009,12 +1009,12 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@playwright/test@1.43.0:
-    resolution: {integrity: sha512-Ebw0+MCqoYflop7wVKj711ccbNlrwTBCtjY5rlbiY9kHL2bCYxq+qltK6uPsVBGGAOb033H2VO0YobcQVxoW7Q==}
-    engines: {node: '>=16'}
+  /@playwright/test@1.48.0:
+    resolution: {integrity: sha512-W5lhqPUVPqhtc/ySvZI5Q8X2ztBOUgZ8LbAFy0JQgrXZs2xaILrUcNO3rQjwbLPfGK13+rZsDa1FpG+tqYkT5w==}
+    engines: {node: '>=18'}
     hasBin: true
     dependencies:
-      playwright: 1.43.0
+      playwright: 1.48.0
 
   /@react-leaflet/core@2.1.0(leaflet@1.9.4)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-Qk7Pfu8BSarKGqILj4x7bCSZ1pjuAPZ+qmRwH5S7mDS91VSbVVsJSrW4qA+GPrro8t69gFYVMWb1Zc4yFmPiVg==}
@@ -1335,7 +1335,7 @@ packages:
       '@serwist/window': 8.4.4
       clean-webpack-plugin: 4.0.0(webpack@5.91.0)
       fast-glob: 3.3.2
-      next: 14.2.4(@babel/core@7.24.3)(@playwright/test@1.43.0)(react-dom@18.2.0)(react@18.2.0)
+      next: 14.2.4(@babel/core@7.24.3)(@playwright/test@1.48.0)(react-dom@18.2.0)(react@18.2.0)
       webpack: 5.91.0
     dev: false
 
@@ -1676,7 +1676,7 @@ packages:
       react:
         optional: true
     dependencies:
-      next: 14.2.4(@babel/core@7.24.3)(@playwright/test@1.43.0)(react-dom@18.2.0)(react@18.2.0)
+      next: 14.2.4(@babel/core@7.24.3)(@playwright/test@1.48.0)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       server-only: 0.0.1
     dev: false
@@ -1705,7 +1705,7 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      next: 14.2.4(@babel/core@7.24.3)(@playwright/test@1.43.0)(react-dom@18.2.0)(react@18.2.0)
+      next: 14.2.4(@babel/core@7.24.3)(@playwright/test@1.48.0)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -4395,12 +4395,12 @@ packages:
     dependencies:
       '@formatjs/intl-localematcher': 0.2.32
       negotiator: 0.6.3
-      next: 14.2.4(@babel/core@7.24.3)(@playwright/test@1.43.0)(react-dom@18.2.0)(react@18.2.0)
+      next: 14.2.4(@babel/core@7.24.3)(@playwright/test@1.48.0)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       use-intl: 3.15.0(react@18.2.0)
     dev: false
 
-  /next@14.2.4(@babel/core@7.24.3)(@playwright/test@1.43.0)(react-dom@18.2.0)(react@18.2.0):
+  /next@14.2.4(@babel/core@7.24.3)(@playwright/test@1.48.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-R8/V7vugY+822rsQGQCjoLhMuC9oFj9SOi4Cl4b2wjDrseD0LRZ10W7R6Czo4w9ZznVSshKjuIomsRjvm9EKJQ==}
     engines: {node: '>=18.17.0'}
     hasBin: true
@@ -4419,7 +4419,7 @@ packages:
         optional: true
     dependencies:
       '@next/env': 14.2.4
-      '@playwright/test': 1.43.0
+      '@playwright/test': 1.48.0
       '@swc/helpers': 0.5.5
       busboy: 1.6.0
       caniuse-lite: 1.0.30001600
@@ -4737,17 +4737,17 @@ packages:
       pathe: 1.1.2
     dev: true
 
-  /playwright-core@1.43.0:
-    resolution: {integrity: sha512-iWFjyBUH97+pUFiyTqSLd8cDMMOS0r2ZYz2qEsPjH8/bX++sbIJT35MSwKnp1r/OQBAqC5XO99xFbJ9XClhf4w==}
-    engines: {node: '>=16'}
+  /playwright-core@1.48.0:
+    resolution: {integrity: sha512-RBvzjM9rdpP7UUFrQzRwR8L/xR4HyC1QXMzGYTbf1vjw25/ya9NRAVnXi/0fvFopjebvyPzsmoK58xxeEOaVvA==}
+    engines: {node: '>=18'}
     hasBin: true
 
-  /playwright@1.43.0:
-    resolution: {integrity: sha512-SiOKHbVjTSf6wHuGCbqrEyzlm6qvXcv7mENP+OZon1I07brfZLGdfWV0l/efAzVx7TF3Z45ov1gPEkku9q25YQ==}
-    engines: {node: '>=16'}
+  /playwright@1.48.0:
+    resolution: {integrity: sha512-qPqFaMEHuY/ug8o0uteYJSRfMGFikhUysk8ZvAtfKmUK3kc/6oNl/y3EczF8OFGYIi/Ex2HspMfzYArk6+XQSA==}
+    engines: {node: '>=18'}
     hasBin: true
     dependencies:
-      playwright-core: 1.43.0
+      playwright-core: 1.48.0
     optionalDependencies:
       fsevents: 2.3.2
 
