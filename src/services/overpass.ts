@@ -21,28 +21,25 @@ const api = DefaultOverpassApi();
 export const getData = async () => {
   console.debug(`Querying OverPass API...`);
   const results = await Promise.all(
-    QUERIES.map(
-      cache(async (query) => {
-        const result = await api.execJson(
-          (s) => {
-            return [
-              s.node.query({
-                ...query,
-                changing_table: "yes",
-              }),
-            ];
-          },
-          { geoInfo: OverpassOutputGeoInfo.Geometry },
-          { timeout: 10 }, // Same as Vercel function timeout
-        );
-        console.debug(
-          `Found ${result.elements.length} ${JSON.stringify(query)} elements.`,
-        );
-        return result;
-      }),
-    ),
+    QUERIES.map(async (query) => {
+      const result = await api.execJson(
+        (s) => {
+          return [
+            s.node.byTags({
+              ...query,
+              changing_table: "yes",
+            }),
+          ];
+        },
+        { geoInfo: OverpassOutputGeoInfo.Geometry },
+        { timeout: 60 }, // Same as Vercel function timeout
+      );
+      console.debug(
+        `Found ${result.elements.length} ${JSON.stringify(query)} elements.`,
+      );
+      return result;
+    }),
   );
-
   const totalResults = results.reduce(
     (acc, r) => acc.concat(r.elements),
     [] as AnyOverpassElement[],
