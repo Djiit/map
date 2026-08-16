@@ -9,13 +9,13 @@ export default function Spot({
   content,
 }: {
   position: LatLngExpression;
-  content: string;
+  content?: string;
 }) {
   const t = useTranslations("spot");
   return (
     <Marker position={position}>
       <Popup>
-        <p>{content}</p>
+        {content && <p>{content}</p>}
         <a
           href={`http://maps.apple.com/?q=${position.toString()[0]},${position.toString()[1]}`}
           target="_blank"
